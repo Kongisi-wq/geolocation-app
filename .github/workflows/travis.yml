@@ -7,7 +7,8 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    # Используем Ubuntu 22.04, где libtinfo5 доступен
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout code
@@ -21,7 +22,9 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt update
-          sudo apt install -y git build-essential python3-dev openjdk-17-jdk-headless libffi-dev libssl-dev zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake
+          sudo apt install -y git build-essential python3-dev openjdk-17-jdk-headless \
+            libffi-dev libssl-dev zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 \
+            cmake
 
       - name: Create virtual environment
         run: |
@@ -53,7 +56,7 @@ jobs:
           source venv/bin/activate
           echo "y" | buildozer android update --sdk
 
-      - name: Build APK (armeabi-v7a)
+      - name: Build APK
         run: |
           source venv/bin/activate
           buildozer -v android debug
