@@ -52,7 +52,7 @@ android.ndk = r23b
 android.ndk_api = 21
 
 # (list) Архитектуры (поддержка большинства устройств)
-android.archs = arm64-v8a, armeabi-v7a
+android.archs = armeabi-v7a
 
 # (bool) Разрешить резервное копирование
 android.allow_backup = True
