@@ -26,7 +26,7 @@ requirements = python3==3.10,hostpython3==3.10,kivy==2.1.0,kivymd@git+https://gi
 source.include_exts = py,kv,png,jpg,jpeg,atlas,ttf,txt,otf
 
 # (str) Ориентация: all = портрет + ландшафт
-orientation = all
+orientation = sensor
 
 # (bool) Полноэкранный режим (0 = нет, 1 = да)
 fullscreen = 0
